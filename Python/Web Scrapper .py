@@ -1,5 +1,5 @@
 #Implementation of website scrapper using beautiful soup
-#Kinshuk Jagdish Anchan
+#Neel Kiran Sankpal
 #24CC1002
 import requests
 from bs4 import BeautifulSoup
