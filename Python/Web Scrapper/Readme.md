@@ -57,7 +57,7 @@ pip install requests beautifulsoup4
 Run the script:
 
 ```bash
-python scraper.py
+python Web Scraper.py
 ```
 
 Example Output:
