@@ -1,10 +1,14 @@
-#Implementation of website scrapper using beautiful soup
-#Neel Kiran Sankpal
-#24CC1002
+# Website Scraper using BeautifulSoup
+# Neel Kiran Sankpal
+# 24CC1002
+
 import requests
 from bs4 import BeautifulSoup
 
-url = "https://books.toscrape.com/"
+print("=== Website Link Scraper ===")
+
+url = input("Enter website URL: ").strip()
+filename = input("Enter output file name (without extension): ").strip() + ".txt"
 
 headers = {
     "User-Agent": "Mozilla/5.0"
@@ -18,20 +22,31 @@ try:
 
         links = soup.find_all("a")
 
-        print(f"\nScraped Links from {url}:\n")
-
         count = 0
-        for link in links:
-            href = link.get("href")
-            if href:
-                count += 1
-                print(f"{count}. {href}")
+
+        with open(filename, "w", encoding="utf-8") as file:
+            file.write(f"Scraped Links from {url}\n")
+            file.write("=" * 50 + "\n")
+
+            for link in links:
+                href = link.get("href")
+
+                if href:
+                    count += 1
+                    print(f"{count}. {href}")
+                    file.write(f"{count}. {href}\n")
 
         if count == 0:
             print("No links found.")
+        else:
+            print(f"\nSuccessfully scraped {count} links.")
+            print(f"Links saved in '{filename}'")
 
     else:
         print("Failed! Status Code:", response.status_code)
 
 except requests.exceptions.RequestException as e:
     print("Error:", e)
+
+except Exception as e:
+    print("Unexpected Error:", e)
