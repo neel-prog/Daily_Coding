@@ -35,7 +35,7 @@ pip install requests beautifulsoup4
 3. Run the script:
 
 ```bash
-python scraper.py
+python Web Scraper.py
 ```
 
 4. Enter the website URL when prompted.
@@ -63,7 +63,7 @@ Links saved in 'links.txt'
 ```text
 Website-Scraper/
 │
-├── scraper.py
+├── Web Scraper.py
 ├── README.md
 └── links.txt
 ```
