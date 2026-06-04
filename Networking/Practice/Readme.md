@@ -1,66 +1,149 @@
-Cisco Packet Tracer Network Simulation using DHCP and Static Routing
-Overview
+# Cisco Packet Tracer Network Simulation using DHCP and Static Routing
 
-This project demonstrates the implementation of a basic network topology in Cisco Packet Tracer using DHCP (Dynamic Host Configuration Protocol) and Static Routing. The network consists of multiple LANs connected through routers, allowing devices on different networks to communicate with each other.
+## 📌 Project Overview
 
-Objectives
-Configure IP addressing for multiple networks.
-Implement DHCP to automatically assign IP addresses to hosts.
-Configure Static Routing using the ip route command.
-Verify end-to-end connectivity between devices.
-Technologies Used
-Cisco Packet Tracer
-DHCP
-Static Routing
-IPv4 Addressing
-Network Topology
+This project demonstrates the implementation of a basic enterprise network in Cisco Packet Tracer. The network utilizes **DHCP (Dynamic Host Configuration Protocol)** for automatic IP address assignment and **Static Routing** for communication between multiple networks.
 
-The network contains:
+The objective of this project is to understand and implement fundamental networking concepts including IP addressing, DHCP configuration, routing, and network connectivity verification.
 
-Multiple routers
-Switches
-PCs/End Devices
-Separate LAN segments
+---
 
-(Insert a screenshot of your network topology here)
+## 🎯 Objectives
 
-Features
-Automatic IP address assignment using DHCP.
-Inter-network communication through static routes.
-Basic network troubleshooting and connectivity testing.
-Verification using ping commands.
-Configuration Summary
-DHCP Configuration
-DHCP pools were created to assign:
-IP Address
-Subnet Mask
-Default Gateway
-DNS Server (if configured)
-Static Routing
+* Configure multiple LANs using IPv4 addressing.
+* Implement DHCP for automatic host configuration.
+* Configure Static Routing using the `ip route` command.
+* Enable communication between different networks.
+* Verify network functionality through connectivity testing.
 
-Static routes were configured on routers using:
+---
 
-ip route <destination-network> <subnet-mask> <next-hop-ip>
+## 🛠 Technologies Used
+
+* Cisco Packet Tracer
+* IPv4 Addressing
+* DHCP
+* Static Routing
+* Routers
+* Switches
+* End Devices (PCs)
+
+---
+
+## 🌐 Network Topology
+
+The topology consists of:
+
+* Multiple routers interconnected through serial or Ethernet links.
+* Separate LAN segments connected via switches.
+* End-user devices configured to obtain IP addresses dynamically through DHCP.
+
+> Add a screenshot of your Packet Tracer topology here.
+
+---
+
+## ⚙️ Configuration Details
+
+### DHCP Configuration
+
+DHCP was configured to automatically assign:
+
+* IP Address
+* Subnet Mask
+* Default Gateway
+* DNS Server (Optional)
+
+Example DHCP Pool Configuration:
+
+```bash
+ip dhcp pool LAN1
+network 192.168.1.0 255.255.255.0
+default-router 192.168.1.1
+dns-server 8.8.8.8
+```
+
+### Static Routing Configuration
+
+Static routes were configured on routers to enable communication between different networks.
 
 Example:
 
+```bash
 ip route 192.168.2.0 255.255.255.0 10.0.0.2
-Testing
+```
 
-Connectivity was verified by:
+General Syntax:
 
-Obtaining IP addresses via DHCP.
-Checking assigned addresses using:
+```bash
+ip route <destination-network> <subnet-mask> <next-hop-address>
+```
+
+---
+
+## 🧪 Testing and Verification
+
+### Verify DHCP Assignment
+
+```bash
 ipconfig
-Testing communication between different networks using:
+```
+
+### Verify Network Connectivity
+
+```bash
 ping <destination-ip>
-Learning Outcomes
-Understanding of DHCP configuration and operation.
-Hands-on experience with static routing.
-Knowledge of IP addressing and subnetting.
-Basic network design and troubleshooting skills.
-Future Improvements
-Implement dynamic routing protocols such as RIP, OSPF, or EIGRP.
-Add VLANs and Inter-VLAN Routing.
-Configure network security features such as ACLs.
-Introduce redundancy and failover mechanisms.
+```
+
+### Verify Routing Table
+
+```bash
+show ip route
+```
+
+Successful ping responses confirmed proper DHCP allocation and routing between networks.
+
+---
+
+## 📚 Concepts Learned
+
+* Network Design Fundamentals
+* IPv4 Addressing and Subnetting
+* DHCP Configuration and Management
+* Static Route Implementation
+* Router and Switch Configuration
+* Network Troubleshooting
+
+---
+
+## 🚀 Future Enhancements
+
+* Implement Dynamic Routing Protocols (RIP, OSPF, EIGRP)
+* Configure VLANs and Inter-VLAN Routing
+* Apply Access Control Lists (ACLs)
+* Introduce Network Redundancy
+* Configure NAT and PAT
+
+---
+
+## 📁 Project Files
+
+```text
+├── NetworkTopology.pkt
+├── README.md
+└── Screenshots/
+    └── topology.png
+```
+
+---
+
+## 👨‍💻 Author
+
+**Neel Kiran Sankpal**
+
+Computer Engineering Student
+
+---
+
+## 📜 License
+
+This project is intended for educational and learning purposes.
