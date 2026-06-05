@@ -5,7 +5,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-print("=== Website Link Scraper ===")
+print("Website Link Scraper")
 
 url = input("Enter website URL: ").strip()
 filename = input("Enter output file name (without extension): ").strip() + ".txt"
