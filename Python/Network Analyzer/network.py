@@ -1,4 +1,4 @@
-import asyncio
+import asyncio # use for older pyshark comment it out if pyshark is newer versions
 import pyshark
 
 loop = asyncio.new_event_loop()
@@ -17,7 +17,7 @@ capture = pyshark.LiveCapture(
 
 try:
     for packet in capture.sniff_continuously():
-        print("\n================ PACKET =================")
+        print("\n============== PACKET ==============")
 
         try:
             src = packet.ip.src
