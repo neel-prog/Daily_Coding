@@ -8,14 +8,13 @@ def dread_score(row):
     title = str(row["Title"]).lower()
     description = str(row["Description"]).lower()
 
-    # Default scores
+
     damage = 5
     reproducibility = 5
     exploitability = 5
     affected_users = 5
     discoverability = 5
 
-    # STRIDE-based baseline scoring
     if "spoofing" in category:
         damage = 8
         reproducibility = 7
@@ -58,7 +57,6 @@ def dread_score(row):
         affected_users = 9
         discoverability = 7
 
-    # Refine scores for particularly serious threats
     if "remote code execution" in title or "remote code execution" in description:
         damage = 10
         exploitability = 7
