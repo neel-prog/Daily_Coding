@@ -1,0 +1,7 @@
+Google Dorking
+site:example.com filetype:pdf
+site:example.com filetype:doc
+site:example.com filetype:xls
+site:example.com inurl:login
+site:example.com inurl:admin
+site:example.com inurl:signin

@@ -1,0 +1,55 @@
+2. Host Discovery
+
+nmap -sn 192.168.1.0/24
+
+3. Basic TCP Scan
+
+nmap 192.168.1.10
+
+4. TCP SYN Scan
+
+sudo nmap -sS 192.168.1.10
+
+5. TCP Connect Scan
+
+nmap -sT 192.168.1.10
+
+6. TCP FIN Scan
+
+sudo nmap -sF 192.168.1.10
+
+7. TCP NULL Scan
+
+sudo nmap -sN 192.168.1.10
+
+8. TCP Xmas Scan
+
+sudo nmap -sX 192.168.1.10
+
+9. UDP Scan
+
+sudo nmap -sU 192.168.1.10
+
+10. Service/Version Detection
+
+nmap -sV 192.168.1.10
+
+11. OS Detection
+
+sudo nmap -O 192.168.1.10
+
+12. Aggressive Scan
+
+sudo nmap -A 192.168.1.10
+
+13. Scan Specific Ports
+
+nmap -p 22,80,443 192.168.1.10
+
+14. Scan All Ports
+
+nmap -p- 192.168.1.10
+
+15. Default NSE Scripts
+
+nmap -sC 192.168.1.10
